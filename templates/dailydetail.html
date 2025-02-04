@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Motivasyon Günlüğüm</title>
+<!--
+
+Template 2097 Pop
+
+https://www.tooplate.com/view/2097-pop
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">                                  <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome-all.min.css' %}">                <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>                       <!-- http://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">                               <!-- Templatemo style -->
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
+    
+</head>
+
+<body>
+        <div id="tm-bg"></div>
+            <div id="tm-wrap">
+                <div class="tm-main-content">
+                    <div class="container tm-site-header-container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <div class="content">
+                                    <div class="grid">
+                                        <div class="grid__item" id="team-link">
+                                            <div class="product">
+                                                <div class="product__description"></div>
+                                                    <div class="row mb-6"></div>
+                                                        <div class="col-12">
+                                                                <div class="row">
+                                                                    <h3 class="form-title1">Bunlar İçin Minnettarım:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="gratitudefield" name="gratitude" class="form-control1" rows="9" placeholder="Bunlar İçin Minnettarım">{{ daily.gratitude }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Bugünü Harika Kılacak Şey Nedir:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="field1field" name="field1" class="form-control1" rows="9" placeholder="Bugünü Harika Kılan Şey Nedir?">{{ daily.field1 }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Günlük Olumlamalar:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="affirmationsfield" name="affirmations" class="form-control1" rows="9" placeholder="Günlük Olumlamalar">{{ daily.affirmations }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Bugün Harika Olan Şeyler:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="field2field" name="field2" class="form-control1" rows="9" placeholder="Bugün Harika Olan Şeyler">{{ daily.field2 }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Bugün Nasıl Daha İyi Hale Gelebilirim:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="field3field" name="field3" class="form-control1" rows="9" placeholder="Bugünü Nasıl Daha İyi Hale Getirebilirdim?">{{ daily.field3 }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Yarın Olmasını İstediğim Şeyler:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="field4field" name="field4" class="form-control1" rows="9" placeholder="Yarın Olmasını İstediğim Şeyler">{{ daily.field4 }}</h3>
+                                                                    </div>
+                                                                    <h3 class="form-title1">Kendine Not:</h3>
+                                                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                        <h3 id="field5field" name="field5" class="form-control1" rows="9" placeholder="Kendine Not">{{ daily.field5 }}</h3>
+                                                                    </div>
+                                                                    <h2>Yazıldığı Tarih: {{daily.date}}</h2>
+                                                                </div>                                                                                       
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p class="small tm-copyright-text">
+                
+                <a rel="nofollow" href="https://www.tooplate.com" class="tm-text-highlight">Mustafa Kayra Toker</a> Tarafından Geliştirildi</p>
+            </footer>
+        </div> <!-- .tm-main-content -->  
+    <!-- load JS -->
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>         <!-- https://jquery.com/ -->    
+    <script src="{% static 'slick/slick.min.js' %}"></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
+    <script src="{% static 'js/anime.min.js' %}"></script>                     <!-- http://animejs.com/ -->
+    <script src="{% static 'js/main.js' %}"></script>  
+    <script>      
+
+        function setupFooter() {
+            var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;
+
+            var main = $('.tm-main-content');
+
+            if($(window).height() < pageHeight) {
+                main.addClass('tm-footer-relative');
+            }
+            else {
+                main.removeClass('tm-footer-relative');   
+            }
+        }
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+
+            setupFooter();
+
+            $(window).resize(function(){
+                setupFooter();
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
+        });
+
+    </script>             
+
+</body>
+</html>

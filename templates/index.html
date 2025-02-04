@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Motivasyon Günlüğüm</title>
+<!--
+
+Template 2097 Pop
+
+https://www.tooplate.com/view/2097-pop
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">                                  <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome-all.min.css' %}">                <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>                       <!-- http://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">                               <!-- Templatemo style -->
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
+    
+</head>
+
+<body>
+    <div id="tm-bg"></div>
+    <div id="tm-wrap">
+        <div class="tm-main-content">
+            <div class="container tm-site-header-container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
+                        <div class="tm-site-header">
+                            <h1 class="mb-4">Motivasyon Günlüğüm</h1>
+                            <img src="{% static 'img/underline.png' %}" class="img-fluid mb-4">
+                            <p>Hedeflerine Giden Bu Yolda Yaşadıklarını Günü Gününe Anlat.</p>        
+                        </div>                        
+                    </div>
+                {% if request.user.is_authenticated %}
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="content">
+                            <div class="grid">
+                                <div class="grid__item" id="home-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
+                                                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                        <g transform="scale(5.12,5.12)">
+                                                            <path d="M25,2c-12.6907,0 -23,10.3093 -23,23c0,12.69071 10.3093,23 23,23c12.69071,0 23,-10.30929 23,-23c0,-12.6907 -10.30929,-23 -23,-23zM25,4c11.60982,0 21,9.39018 21,21c0,11.60982 -9.39018,21 -21,21c-11.60982,0 -21,-9.39018 -21,-21c0,-11.60982 9.39018,-21 21,-21zM24,13v11h-11v2h11v11h2v-11h11v-2h-11v-11z"></path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+
+                                            <span class="tm-nav-text">Günlük Yaz</span>
+                                            <div class="product__bg"></div>        
+                                        </div>                                    
+                                        <div class="product__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="gratitudefield" name="gratitude" class="form-control" rows="9" placeholder="Bunlar İçin Minnettarım"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="field1field" name="field1" class="form-control" rows="9" placeholder="Bugünü Harika Kılan Şey Nedir?"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="affirmationsfield" name="affirmations" class="form-control" rows="9" placeholder="Günlük Olumlamalar"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="field2field" name="field2" class="form-control" rows="9" placeholder="Bugün Harika Olan Şeyler"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="field3field" name="field3" class="form-control" rows="9" placeholder="Bugünü Nasıl Daha İyi Hale Getirebilirdim?"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="field4field" name="field4" class="form-control" rows="9" placeholder="Yarın Olmasını İstediğim Şeyler"></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                    <textarea id="field5field" name="field5" class="form-control" rows="9" placeholder="Kendine Not"></textarea>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <button name="dailyadd" type="submit" class="btn btn-primary tm-btn-submit">Günlüğü Ekle</button>
+                                                        </form>
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="team-link">
+                                    <div class="product">
+                                        <div name="dailyspage" class="tm-nav-link">
+                                            <i class="fas fa-users fa-3x tm-nav-icon"></i>
+                                            <span name="dailyspage" class="tm-nav-text">Günlüklerin</span>
+                                            <div class="product__bg"></div>            
+                                        </div>                                   
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                                {% for daily in dailys %}   
+                                                                    <a rel="nofollow" href="{% url 'dailydetail' daily.pk %}" class="tm-text-highlight">{{ daily.date|date:"d M Y" }} Tarihindeki Günlüğün</a></p>
+                                                                {% empty %}
+                                                                    <p>Henüz Bir Veri Eklenmemiş</p>
+                                                                {% endfor %}    
+                                                            </div>                                
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-handshake fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Bilgilerini Düzenle</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                                 
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="username" class="form-control" placeholder="{{ user.username }}"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="contact_email" name="email" class="form-control" placeholder="{{ user.email }}"  required/>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <div class="form-group">
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                  <input type="password" id="contact_password" name="password1" class="form-control" placeholder="Şifre"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                  <input type="password" id="contact_password" name="password2" class="form-control" placeholder="Şifreyi Onayla"  required/>
+                                                                </div>
+                                                            </div>
+                                                            <button name="userdetail" type="submit" class="btn btn-primary tm-btn-submit">Bilgileri Güncelle</button>
+                                                        </form> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-comments fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">İletişim</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                              
+                                        <div class="product__description">
+                                            <div class="pt-sm-4 pb-sm-4 pl-sm-5 pr-sm-5 pt-2 pb-2 pl-3 pr-3">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Contact Us</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-12">
+                                                        <p>Lorem ipsum dolor site amet, consectetur adipiscing elit. Aliquam interdum, nisl sed faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor, vel rhoncus libero.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="name" class="form-control" placeholder="İsim"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="contact_email" name="email" class="form-control" placeholder="Email"  required/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                              <textarea id="contact_subject" name="subject" class="form-control" rows="9" placeholder="Konu" required></textarea>
+                                                            </div>                                                       
+                                                            <div class="form-group">
+                                                              <textarea id="contact_message" name="message" class="form-control" rows="9" placeholder="Mesaj" required></textarea>
+                                                            </div>
+                                                            <button name="contact" type="submit" class="btn btn-primary tm-btn-submit">Gönder</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>                       
+                    </div>
+                {% else %}
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="content">
+                            <div class="grid">
+                                <div class="grid__item" id="home-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-home fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Hoşgeldin</span>
+                                            <div class="product__bg"></div>        
+                                        </div>                                    
+                                        <div class="product__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <h2 class="tm-page-title">Motivasyon Günlüğüne Hoşgeldin.</h2>      
+                                                </div>
+                                            </div>                                        
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <img src="{% static 'img/welcome-1.jpg' %}" class="img-fluid mb-3">
+                                                    <p>Merak etme! Bu sitede herhangi bir ücretlendirme yok. Sadece ücretsiz şekilde günlüğünü yazarak kendi raporunu oluşturabilirsin.</p>
+                                                    <p>Sitemizi arkadaşlarınla paylaşarak bizlere destek olabilirsin.</p>    
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <p>Bir yıl, bir kitap gibidir. 365 tane sayfası var ve bu kitapda bir kahraman olmak senin elinde</p>
+                                                    <p>Şimdi bu kitabı yazmak için <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">Kayıt olarak</a> ilk sayfalarını yazabilirsin.</p>
+                                                    <img src="{% static 'img/welcome-2.jpg' %}" class="img-fluid">
+                                                </div>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="team-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-users fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Giriş Yap</span>
+                                            <div class="product__bg"></div>            
+                                        </div>                                     
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="username" class="form-control" placeholder="İsim"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="password" id="contact_password" name="password" class="form-control" placeholder="Şifre"  required/>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <button name="login" type="submit" class="btn btn-primary tm-btn-submit">Giriş Yap</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-handshake fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Kayıt Ol</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                                 
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="username" class="form-control" placeholder="İsim"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="contact_email" name="email" class="form-control" placeholder="Email"  required/>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <div class="form-group">
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                  <input type="password" id="contact_password" name="password1" class="form-control" placeholder="Şifre"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                                                  <input type="password" id="contact_password" name="password2" class="form-control" placeholder="Şifreyi Onayla"  required/>
+                                                                </div>
+                                                            </div>
+                                                            <button name="register" type="submit" class="btn btn-primary tm-btn-submit">Submit</button>
+                                                        </form> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-comments fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">İletişim</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                              
+                                        <div class="product__description">
+                                            <div class="pt-sm-4 pb-sm-4 pl-sm-5 pr-sm-5 pt-2 pb-2 pl-3 pr-3">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Contact Us</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-12">
+                                                        <p>Lorem ipsum dolor site amet, consectetur adipiscing elit. Aliquam interdum, nisl sed faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor, vel rhoncus libero.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <form method="post" class="contact-form">
+                                                        {% csrf_token %}
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="name" class="form-control" placeholder="İsim"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="contact_email" name="email" class="form-control" placeholder="Email"  required/>
+                                                                </div>
+                                                            </div>        
+                                                            <div class="form-group">
+                                                              <textarea id="contact_subject" name="subject" class="form-control" rows="9" placeholder="Konu" required></textarea>
+                                                            </div>                                                
+                                                            <div class="form-group">
+                                                              <textarea id="contact_message" name="message" class="form-control" rows="9" placeholder="Mesaj" required></textarea>
+                                                            </div>
+                                                            <button name="contact" type="submit" class="btn btn-primary tm-btn-submit">Gönder</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>                       
+                    </div>
+                {% endif %}
+                    
+                </div>                
+            </div>
+            <footer>
+                <p class="small tm-copyright-text">
+                
+                <a rel="nofollow" href="https://www.tooplate.com" class="tm-text-highlight">Mustafa Kayra Toker</a> Tarafından Geliştirildi</p>
+            </footer>
+        </div> <!-- .tm-main-content -->  
+    </div>
+    <!-- load JS -->
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>         <!-- https://jquery.com/ -->    
+    <script src="{% static 'slick/slick.min.js' %}"></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
+    <script src="{% static 'js/anime.min.js' %}"></script>                     <!-- http://animejs.com/ -->
+    <script src="{% static 'js/main.js' %}"></script>  
+    <script>      
+
+        function setupFooter() {
+            var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;
+
+            var main = $('.tm-main-content');
+
+            if($(window).height() < pageHeight) {
+                main.addClass('tm-footer-relative');
+            }
+            else {
+                main.removeClass('tm-footer-relative');   
+            }
+        }
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+
+            setupFooter();
+
+            $(window).resize(function(){
+                setupFooter();
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
+        });
+
+    </script>             
+
+</body>
+</html>
